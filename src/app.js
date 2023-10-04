@@ -22,10 +22,11 @@ let excusegenerator = () => {
     "while I was praying"
   ];
 
-  let quien = Math.floor(Math.random() * who.length);
-  let accion = Math.floor(Math.random() * action.length);
-  let que = Math.floor(Math.random() * what.length);
-  let cuando = Math.floor(Math.random() * when.length);
+  // let quien = Math.floor(Math.random() * who.length);
+  let quien = ObtenerElementoAleatorio(who);
+  let accion = ObtenerElementoAleatorio(action);
+  let que = ObtenerElementoAleatorio(what);
+  let cuando = ObtenerElementoAleatorio(when);
 
   return (
     who[quien] + " " + action[accion] + " " + what[que] + " " + when[cuando]
@@ -36,3 +37,9 @@ let refresh = document.getElementById("refresh");
 refresh.addEventListener("click", _ => {
   location.reload();
 });
+
+function ObtenerElementoAleatorio(ArrayCalcular) {
+  console.log("ObtenerElementoAleatorio");
+
+  return Math.floor(Math.random() * ArrayCalcular.length);
+}
